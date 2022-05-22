@@ -13,12 +13,14 @@
 
 version: 1
 transforms:
-  - title: "Migrate to 'generateFiveWords'"
-    date: 2022-05-22
+  - title: "Migrate 'oldParameter' to 'newParameter'"
+    date: 2022-06-19
     element:
-      uris: [ 'vocabulary.dart' ]
-      method: 'generate5Words'
-      inClass: 'Vocabulary'
+      uris: [ 'dart_fix_examples.dart' ]
+      constructor: ''
+      inClass: 'DartFixExamples'
     changes:
-      - kind: 'rename'
-        newName: 'generateFiveWords'
+    - kind: 'renameParameter'
+      oldName: 'oldParameter'
+      newName: 'newParameter'
+
