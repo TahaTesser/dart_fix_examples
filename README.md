@@ -1,49 +1,35 @@
-## Dart fix Examples
+## Dart Fix Examples
 
-A collection of samples that illustrate how Dart fix works.
+A collection of samples that illustrate how `dart fix` works.
 
 Read more in [Data-driven Fixes](https://github.com/flutter/flutter/wiki/Data-driven-Fixes#data-driven-fixes) wiki page.
 
-# Project structure
+# Repository structure
 ```
-vocabulary/ (package)  
+dart_fix_examples/ (package)  
 ├─ lib/  
-│   ├─ fix_data.yaml  (data file)  
-│   ├─ vocabulary.dart (api)  
-│   ├─ wofd.dart (api)  
+│   ├─ fix_data.yaml (data file)  
+│   ├─ dart_fix_examples.dart (api)  
 ├─ test_fixes/ (test fixes)  
-├─ example_app/ (app)  
+├─ example/ (playground app)  
 ```
 
-To run fix tests locally.
+Execute the following command to run `test_fixes` tests.
 ```sh
+cd test_fixes
 dart fix --compare-to-golden
 ```
 
-### 1. Rename parameter [Example](lib/fix_data.yaml#L16)
+### #1 Rename parameter [example](lib/fix_data.yaml#L16).
 ```yaml
-  - title: "Migrate 'oldParameter to 'newParameter'"
+  - title: "Migrate 'oldParameter' to 'newParameter'"
     date: YYYY-MM-DD
     element:
-      uris: [ 'xyz.dart' ]
+      uris: [ 'dart_fix_examples.dart' ]
       constructor: ''
-      inClass: 'ClassName'
+      inClass: 'DartFixExamples'
     changes:
-      - kind: 'renameParameter'
-        oldName: 'oldParameter'
-        newName: 'newParameter'
+    - kind: 'renameParameter'
+      oldName: 'oldParameter'
+      newName: 'newParameter'
 ```
-
-### 2. Rename method [Example](lib/fix_data.yaml#L27)
-```yaml
-  - title: "Migrate 'newMethodName to 'oldMethodName'"
-    date: YYYY-MM-DD
-    element:
-      uris: [ 'xyz.dart' ]
-      method: 'oldMethodName'
-      inClass: 'ClassName'
-    changes:
-      - kind: 'rename'
-        newName: 'newMethodName'
-```
-
