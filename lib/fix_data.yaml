@@ -13,7 +13,7 @@
 
 version: 1
 transforms:
-  - title: "Migrate 'oldParameter' to 'newParameter'"
+  - title: "Rename 'oldParameter' to 'updatedParameter'"
     date: 2022-06-19
     element:
       uris: [ 'dart_fix_examples.dart' ]
@@ -22,5 +22,24 @@ transforms:
     changes:
     - kind: 'renameParameter'
       oldName: 'oldParameter'
-      newName: 'newParameter'
+      newName: 'updatedParameter'
 
+  - title: "Rename 'oldField' to 'updatedField'"
+    date: 2022-06-19
+    element:
+      uris: [ 'dart_fix_examples.dart' ]
+      field: 'oldField'
+      inClass: 'DartFixExamples'
+    changes:
+    - kind: 'rename'
+      newName: 'updatedField'
+
+  - title: "Remove 'unusedParameter'"
+    date: 2022-06-19
+    element:
+      uris: [ 'dart_fix_examples.dart' ]
+      constructor: ''
+      inClass: 'DartFixExamples'
+    changes:
+    - kind: 'removeParameter'
+      name: 'unusedParameter'

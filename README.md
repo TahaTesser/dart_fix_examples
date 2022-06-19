@@ -20,9 +20,11 @@ cd test_fixes
 dart fix --compare-to-golden
 ```
 
+# Collection of examples
+
 ### #1 Rename parameter [example](lib/fix_data.yaml#L16).
 ```yaml
-  - title: "Migrate 'oldParameter' to 'newParameter'"
+  - title: "Rename 'oldParameter' to 'updatedParameter'"
     date: YYYY-MM-DD
     element:
       uris: [ 'dart_fix_examples.dart' ]
@@ -31,5 +33,31 @@ dart fix --compare-to-golden
     changes:
     - kind: 'renameParameter'
       oldName: 'oldParameter'
-      newName: 'newParameter'
+      newName: 'updatedParameter'
+```
+
+### #2 Rename field [example](lib/fix_data.yaml#L27).
+```yaml
+  - title: "Rename 'oldField' to 'updatedField'"
+    date: YYYY-MM-DD
+    element:
+      uris: [ 'dart_fix_examples.dart' ]
+      field: 'oldField'
+      inClass: 'DartFixExamples'
+    changes:
+    - kind: 'rename'
+      newName: 'updatedField'
+```
+
+### #3 Remove parameter [example](lib/fix_data.yaml#L37).
+```yaml
+  - title: "Remove 'unusedParameter'"
+    date: YYYY-MM-DD
+    element:
+      uris: [ 'dart_fix_examples.dart' ]
+      constructor: ''
+      inClass: 'DartFixExamples'
+    changes:
+    - kind: 'removeParameter'
+      name: 'unusedParameter'
 ```

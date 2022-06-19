@@ -2,5 +2,14 @@ import 'package:dart_fix_examples/dart_fix_examples.dart';
 
 void main () {
   DartFixExamples dartFixExamples = DartFixExamples();
-  dartFixExamples = DartFixExamples(newParameter: '');
+
+  // #1: Migrate 'oldParameter' to 'updatedParameter'.
+  // #3: Remove 'unusedParameter'.
+  // #4: Add 'additionalParameter'.
+  dartFixExamples = DartFixExamples(
+    updatedParameter: '',
+  );
+
+  // #2: Migrate 'oldField' to 'updatedField'.
+  dartFixExamples.updatedField = '';
 }

@@ -3,33 +3,49 @@ library dart_fix_examples;
 /// This is the `DartFixExamples` class.
 class DartFixExamples {
   DartFixExamples({
-    this.newParameter,
+    this.updatedParameter,
+    this.updatedField,
+    this.additionalParameter,
+
+    // Deprecated parameters.
     @Deprecated(
-      'Migrate to newParameter'
-      'This is a deprecated parameter.'
+      'Migrate to updatedParameter. '
+      'This is a deprecated parameter'
     )
     this.oldParameter,
-    this.newField,
     @Deprecated(
-      'Migrate to newField'
-      'This is a deprecated field.'
+      'Migrate to updatedField. '
+      'This is a deprecated field'
     )
     this.oldField,
+    @Deprecated(
+      'Remove this parameter. '
+      'This is a deprecated parameter'
+    )
+    this.unusedParameter,
   });
 
-  String? newParameter;
+  String? updatedParameter;
+
+  String? updatedField;
+
+  String? additionalParameter;
 
   @Deprecated(
-    'Migrate to newParameter'
-    'This is a deprecated parameter.'
+    'Migrate to updatedParameter. '
+    'This is a deprecated parameter'
   )
   String? oldParameter;
 
-  String? newField;
-
   @Deprecated(
-    'Migrate to newField'
-    'This is a deprecated field.'
+    'Migrate to updatedField '
+    'This is a deprecated field'
   )
   String? oldField;
+
+  @Deprecated(
+    'Remove this parameter '
+    'This is a deprecated parameter'
+  )
+  String? unusedParameter;
 }
