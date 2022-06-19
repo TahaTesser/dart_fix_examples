@@ -14,10 +14,19 @@ dart_fix_examples/ (package)
 ├─ example/ (playground app)  
 ```
 
+### Commands
+
 Execute the following command to run `test_fixes` tests.
 ```sh
 cd test_fixes
 dart fix --compare-to-golden
+```
+
+Try dart fixes in the `example` app.
+```sh
+cd example
+dart fix --dry-run
+dart fix --apply
 ```
 
 # Collection of examples
